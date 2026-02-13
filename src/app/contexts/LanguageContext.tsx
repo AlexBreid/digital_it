@@ -52,17 +52,13 @@ const translations = {
     'services.ai.desc': 'Intelligent automation and machine learning integration',
     
     // Portfolio
-    'portfolio.title': 'Our Portfolio',
-    'portfolio.subtitle': 'Featured projects we\'re proud of',
-    'portfolio.case': 'See Case Study',
-    'portfolio.project1': 'FinTech Platform',
-    'portfolio.project1.cat': 'Web Development',
-    'portfolio.project2': 'Health & Wellness App',
-    'portfolio.project2.cat': 'Mobile Apps',
-    'portfolio.project3': 'E-Commerce Solution',
-    'portfolio.project3.cat': 'Full Stack',
-    'portfolio.project4': 'AI Analytics Dashboard',
-    'portfolio.project4.cat': 'AI Solutions',
+    'portfolio.title': 'Our Works',
+    'portfolio.subtitle': 'Real projects built by our team — from concept to launch',
+    'portfolio.visit': 'Visit Site',
+    'portfolio.project1': 'NovaBite',
+    'portfolio.project1.desc': 'A modern food delivery and restaurant platform with a sleek UI, smooth animations, and intuitive user experience.',
+    'portfolio.project2': 'STO Service',
+    'portfolio.project2.desc': 'A professional auto service website with online booking, service catalog, and customer management system.',
     
     // Testimonials
     'testimonials.title': 'What Our Clients Say',
@@ -136,17 +132,13 @@ const translations = {
     'services.ai.desc': 'Интеллектуальная автоматизация и интеграция машинного обучения',
     
     // Portfolio
-    'portfolio.title': 'Портфолио',
-    'portfolio.subtitle': 'Избранные проекты, которыми мы гордимся',
-    'portfolio.case': 'Смотреть кейс',
-    'portfolio.project1': 'FinTech Платформа',
-    'portfolio.project1.cat': 'Веб-разработка',
-    'portfolio.project2': 'Приложение для здоровья',
-    'portfolio.project2.cat': 'Мобильные приложения',
-    'portfolio.project3': 'E-Commerce решение',
-    'portfolio.project3.cat': 'Full Stack',
-    'portfolio.project4': 'AI Аналитика',
-    'portfolio.project4.cat': 'AI Решения',
+    'portfolio.title': 'Наши работы',
+    'portfolio.subtitle': 'Реальные проекты нашей команды — от идеи до запуска',
+    'portfolio.visit': 'Открыть сайт',
+    'portfolio.project1': 'NovaBite',
+    'portfolio.project1.desc': 'Современная платформа доставки еды и ресторанов с красивым интерфейсом, плавными анимациями и удобным UX.',
+    'portfolio.project2': 'СТО Сервис',
+    'portfolio.project2.desc': 'Профессиональный сайт автосервиса с онлайн-записью, каталогом услуг и системой управления клиентами.',
     
     // Testimonials
     'testimonials.title': 'Что говорят наши клиенты',
