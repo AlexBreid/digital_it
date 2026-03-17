@@ -65,14 +65,20 @@ export function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@digital.com',
-      href: 'mailto:hello@digital.com',
+      value: 'digitalagencysupport@gmail.com',
+      href: 'mailto:digitalagencysupport@gmail.com',
     },
     {
       icon: MessageSquare,
-      label: 'Telegram',
-      value: '@digital_agency',
-      href: 'https://t.me/digital_agency',
+      label: 'Telegram (основной)',
+      value: '@digitalcodet',
+      href: 'https://t.me/digitalcodet',
+    },
+    {
+      icon: MessageSquare,
+      label: 'Telegram (дополнительный)',
+      value: '@digitalagencyy0',
+      href: 'https://t.me/digitalagencyy0',
     },
   ];
 
