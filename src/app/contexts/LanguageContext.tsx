@@ -57,7 +57,7 @@ const translations = {
     'portfolio.visit': 'Visit Site',
     'portfolio.project1': 'NovaBite',
     'portfolio.project1.desc': 'A modern food delivery and restaurant platform with a sleek UI, smooth animations, and intuitive user experience.',
-    'portfolio.project2': 'STO Service',
+    'portfolio.project2': 'car Service',
     'portfolio.project2.desc': 'A professional auto service website with online booking, service catalog, and customer management system.',
     
     // Testimonials
@@ -68,7 +68,7 @@ const translations = {
     'testimonials.position1': 'CEO, TechCorp',
     'testimonials.quote2': 'Exceptional quality and professionalism. The project was delivered on time and exceeded all our requirements.',
     'testimonials.author2': 'Michael Chen',
-    'testimonials.position2': 'CTO, InnovateLab',
+    'testimonials.position2': 'car Service, InnovateLab',
     'testimonials.quote3': 'Their innovative approach and attention to detail transformed our digital presence. Highly recommended!',
     'testimonials.author3': 'Emma Williams',
     'testimonials.position3': 'Founder, StartupHub',
