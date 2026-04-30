@@ -71,6 +71,12 @@ export function Contact() {
     {
       icon: MessageSquare,
       label: 'Telegram (основной)',
+      value: '@kirushaaz',
+      href: 'https://t.me/kirushaaz',
+    },
+    {
+      icon: MessageSquare,
+      label: 'Telegram',
       value: '@digitalcodet',
       href: 'https://t.me/digitalcodet',
     },
