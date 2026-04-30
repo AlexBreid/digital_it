@@ -70,7 +70,7 @@ export function Contact() {
     },
     {
       icon: MessageSquare,
-      label: 'Telegram (основной)',
+      label: 'Telegram',
       value: '@kirushaaz',
       href: 'https://t.me/kirushaaz',
     },
@@ -82,7 +82,7 @@ export function Contact() {
     },
     {
       icon: MessageSquare,
-      label: 'Telegram (дополнительный)',
+      label: 'Telegram',
       value: '@digitalagencyy0',
       href: 'https://t.me/digitalagencyy0',
     },
@@ -243,7 +243,7 @@ export function Contact() {
               <div className="space-y-4">
                 {contactInfo.map((info) => (
                   <a
-                    key={info.label}
+                    key={`${info.label}-${info.value}`}
                     href={info.href}
                     className="group flex items-center gap-4 p-4 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all"
                   >
