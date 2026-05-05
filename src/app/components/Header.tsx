@@ -28,12 +28,18 @@ export function Header() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 blur-lg opacity-50"></div>
-              <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl font-bold text-xl">
-                Digital
-              </div>
-            </div>
+            <a
+              href="#home"
+              className="flex items-center shrink-0 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
+            >
+              <img
+                src="/digital_it_icon_clean.png"
+                alt="Digital IT"
+                width={160}
+                height={48}
+                className="h-10 md:h-11 w-auto object-contain object-left"
+              />
+            </a>
           </motion.div>
 
           {/* Desktop Navigation */}
