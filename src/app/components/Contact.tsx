@@ -1,8 +1,26 @@
 import React, { useState, useRef } from 'react';
-import { Send, Mail, MessageSquare, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Send, Mail, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../contexts/LanguageContext';
 import emailjs from '@emailjs/browser';
+
+type IconProps = { className?: string };
+
+function TelegramIcon({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.559z" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
 
 // ============================================================
 // НАСТРОЙКА EmailJS (3 простых шага):
@@ -61,40 +79,48 @@ export function Contact() {
     });
   };
 
-  const contactInfo = [
+  const contactChannels = [
     {
-      icon: Mail,
-      label: 'Email',
-      value: 'digitalagencysupport@gmail.com',
-      href: 'mailto:digitalagencysupport@gmail.com',
-    },
-    {
-      icon: MessageSquare,
-      label: 'Telegram',
-      value: '@kirushaaz',
-      href: 'https://t.me/kirushaaz',
-    },
-    {
-      icon: MessageSquare,
-      label: 'Telegram',
-      value: '@digitalcodet',
-      href: 'https://t.me/digitalcodet',
-    },
-    {
-      icon: MessageSquare,
-      label: 'Telegram',
+      key: 'telegram',
+      labelKey: 'contact.channel.telegram' as const,
       value: '@digitalagencyy0',
       href: 'https://t.me/digitalagencyy0',
+      Icon: TelegramIcon,
+      iconWrapClass: 'bg-[#229ED9] shadow-lg shadow-cyan-500/40',
+      cardClass:
+        'bg-gradient-to-br from-cyan-50 to-sky-50 dark:from-slate-900 dark:to-slate-800 border-2 border-cyan-400/70 dark:border-cyan-400/50 shadow-lg shadow-cyan-500/15 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/25',
+    },
+    {
+      key: 'whatsapp',
+      labelKey: 'contact.channel.whatsapp' as const,
+      value: '+353 89 941 4745',
+      href: 'https://wa.me/353899414745',
+      Icon: WhatsAppIcon,
+      iconWrapClass: 'bg-[#25D366] shadow-lg shadow-emerald-500/40',
+      cardClass:
+        'bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-slate-900 dark:to-slate-800 border-2 border-emerald-400/70 dark:border-emerald-400/50 shadow-lg shadow-emerald-500/15 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/25',
+    },
+    {
+      key: 'email',
+      labelKey: 'contact.email' as const,
+      value: 'Digitalagencyy58@gmail.com',
+      href: 'mailto:Digitalagencyy58@gmail.com',
+      Icon: Mail,
+      iconWrapClass: 'bg-gradient-to-br from-blue-600 to-indigo-600 shadow-lg shadow-blue-500/40',
+      cardClass:
+        'bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-slate-800 border-2 border-blue-400/70 dark:border-blue-400/50 shadow-lg shadow-blue-500/15 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/25',
     },
   ];
 
-
   return (
-    <section id="contact" className="py-24 md:py-32 bg-white dark:bg-slate-900 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-24 md:py-32 bg-gradient-to-b from-slate-50 via-blue-50/40 to-violet-50/50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-br from-cyan-400/25 to-blue-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-br from-violet-400/25 to-fuchsia-500/15 rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -103,12 +129,12 @@ export function Contact() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-4"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-500 to-violet-500 text-white text-sm font-semibold shadow-lg shadow-blue-500/35 mb-4 ring-2 ring-white/50 dark:ring-white/10"
           >
             <Send className="w-4 h-4" />
-            <span className="text-sm">Contact</span>
+            <span>{t('contact.badge')}</span>
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -118,13 +144,13 @@ export function Contact() {
           >
             {t('contact.title')}
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+            className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto"
           >
             {t('contact.subtitle')}
           </motion.p>
@@ -137,7 +163,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
                   {t('contact.name')}
@@ -149,7 +175,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-white/90 dark:bg-slate-800/90 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-400 dark:focus:border-blue-400 transition-all"
                 />
               </div>
 
@@ -164,7 +190,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-white/90 dark:bg-slate-800/90 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-400 dark:focus:border-blue-400 transition-all"
                 />
               </div>
 
@@ -179,14 +205,14 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-white/90 dark:bg-slate-800/90 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-400 dark:focus:border-blue-400 transition-all resize-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="group w-full px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:scale-105 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="group w-full px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-violet-600 to-fuchsia-600 text-white font-semibold shadow-xl shadow-violet-500/35 ring-2 ring-white/30 dark:ring-white/10 hover:brightness-110 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:brightness-100"
               >
                 {status === 'sending' ? (
                   <>
@@ -237,23 +263,27 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl mb-6 text-slate-900 dark:text-white">
+              <h3 className="text-2xl mb-6 text-slate-900 dark:text-white font-semibold">
                 {t('contact.info')}
               </h3>
               <div className="space-y-4">
-                {contactInfo.map((info) => (
+                {contactChannels.map((channel) => (
                   <a
-                    key={`${info.label}-${info.value}`}
-                    href={info.href}
-                    className="group flex items-center gap-4 p-4 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all"
+                    key={channel.key}
+                    href={channel.href}
+                    target={channel.key === 'email' ? undefined : '_blank'}
+                    rel={channel.key === 'email' ? undefined : 'noopener noreferrer'}
+                    className={`group flex items-center gap-4 p-5 rounded-2xl transition-all hover:scale-[1.02] ${channel.cardClass}`}
                   >
-                    <div className="p-3 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white">
-                      <info.icon className="w-6 h-6" />
+                    <div className={`p-3 rounded-xl text-white shrink-0 ${channel.iconWrapClass}`}>
+                      <channel.Icon className="w-6 h-6" />
                     </div>
-                    <div>
-                      <div className="text-sm text-slate-500 dark:text-slate-400">{info.label}</div>
-                      <div className="text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        {info.value}
+                    <div className="min-w-0">
+                      <div className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
+                        {t(channel.labelKey)}
+                      </div>
+                      <div className="text-lg font-semibold text-slate-900 dark:text-white truncate group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
+                        {channel.value}
                       </div>
                     </div>
                   </a>
@@ -262,13 +292,13 @@ export function Contact() {
             </div>
 
             {/* Decorative Element */}
-            <div className="relative p-8 rounded-3xl bg-gradient-to-br from-blue-600 to-purple-600 overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]"></div>
+            <div className="relative p-8 rounded-3xl bg-gradient-to-br from-blue-500 via-violet-600 to-fuchsia-600 overflow-hidden shadow-xl shadow-violet-500/30 ring-2 ring-white/40 dark:ring-white/15">
+              <div className="absolute inset-0 opacity-25">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]" />
               </div>
               <div className="relative">
-                <h4 className="text-xl mb-2 text-white">Ready to start?</h4>
-                <p className="text-blue-100">Let's create something amazing together!</p>
+                <h4 className="text-xl mb-2 text-white font-bold drop-shadow-sm">{t('contact.cta.title')}</h4>
+                <p className="text-white/95 text-base leading-relaxed">{t('contact.cta.desc')}</p>
               </div>
             </div>
           </motion.div>

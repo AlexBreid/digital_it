@@ -74,8 +74,11 @@ const translations = {
     'testimonials.position3': 'Founder, StartupHub',
     
     // Contact
+    'contact.badge': 'Contact us',
     'contact.title': 'Get In Touch',
-    'contact.subtitle': 'Let\'s discuss your next project',
+    'contact.subtitle': 'Reach out anytime — we\'re happy to help with your next project',
+    'contact.channel.telegram': 'Telegram',
+    'contact.channel.whatsapp': 'WhatsApp',
     'contact.name': 'Name',
     'contact.email': 'Email',
     'contact.message': 'Message',
@@ -84,6 +87,8 @@ const translations = {
     'contact.success': 'Message sent successfully! We will get back to you soon.',
     'contact.error': 'Failed to send message. Please try again or email us directly.',
     'contact.info': 'Contact Information',
+    'contact.cta.title': 'Prefer messaging?',
+    'contact.cta.desc': 'Tap Telegram or WhatsApp — we usually reply within minutes.',
     'contact.social': 'Follow Us',
     
     // Footer
@@ -154,8 +159,11 @@ const translations = {
     'testimonials.position3': 'Основатель, StartupHub',
     
     // Contact
+    'contact.badge': 'Свяжитесь с нами',
     'contact.title': 'Свяжитесь с нами',
-    'contact.subtitle': 'Давайте обсудим ваш следующий проект',
+    'contact.subtitle': 'Пишите в любое время — поможем с вашим следующим проектом',
+    'contact.channel.telegram': 'Telegram',
+    'contact.channel.whatsapp': 'WhatsApp',
     'contact.name': 'Имя',
     'contact.email': 'Email',
     'contact.message': 'Сообщение',
@@ -164,6 +172,8 @@ const translations = {
     'contact.success': 'Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.',
     'contact.error': 'Не удалось отправить сообщение. Попробуйте ещё раз или напишите нам на почту.',
     'contact.info': 'Контактная информация',
+    'contact.cta.title': 'Удобнее в мессенджере?',
+    'contact.cta.desc': 'Нажмите Telegram или WhatsApp — обычно отвечаем за несколько минут.',
     'contact.social': 'Мы в соцсетях',
     
     // Footer
