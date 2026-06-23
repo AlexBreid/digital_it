@@ -83,8 +83,18 @@ export function Contact() {
     {
       key: 'telegram',
       labelKey: 'contact.channel.telegram' as const,
-      value: '@d1gitaladmin',
-      href: 'https://t.me/d1gitaladmin',
+      value: '@kirushaaz',
+      href: 'https://t.me/kirushaaz',
+      Icon: TelegramIcon,
+      iconWrapClass: 'bg-[#229ED9] shadow-lg shadow-cyan-500/40',
+      cardClass:
+        'bg-gradient-to-br from-cyan-50 to-sky-50 dark:from-slate-900 dark:to-slate-800 border-2 border-cyan-400/70 dark:border-cyan-400/50 shadow-lg shadow-cyan-500/15 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/25',
+    },
+    {
+      key: 'telegram',
+      labelKey: 'contact.channel.telegram' as const,
+      value: '@digitalcodet',
+      href: 'https://t.me/digitalcodet',
       Icon: TelegramIcon,
       iconWrapClass: 'bg-[#229ED9] shadow-lg shadow-cyan-500/40',
       cardClass:
