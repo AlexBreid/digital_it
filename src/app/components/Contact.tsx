@@ -103,7 +103,7 @@ export function Contact() {
     {
       key: 'whatsapp',
       labelKey: 'contact.channel.whatsapp' as const,
-      value: '+353 89 941 4745',
+      value: '+353 83 098 0791',
       href: 'https://wa.me/353899414745',
       Icon: WhatsAppIcon,
       iconWrapClass: 'bg-[#25D366] shadow-lg shadow-emerald-500/40',
