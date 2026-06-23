@@ -78,7 +78,6 @@ const translations = {
     'contact.title': 'Get In Touch',
     'contact.subtitle': 'Reach out anytime — we\'re happy to help with your next project',
     'contact.channel.telegram': 'Telegram',
-    'contact.channel.telegramAdmin': 'Telegram Admin',
     'contact.channel.whatsapp': 'WhatsApp',
     'contact.name': 'Name',
     'contact.email': 'Email',
@@ -89,7 +88,7 @@ const translations = {
     'contact.error': 'Failed to send message. Please try again or email us directly.',
     'contact.info': 'Contact Information',
     'contact.cta.title': 'Prefer messaging?',
-    'contact.cta.desc': 'Tap Telegram — we usually reply within minutes.',
+    'contact.cta.desc': 'Tap Telegram or WhatsApp — we usually reply within minutes.',
     'contact.social': 'Follow Us',
     
     // Footer
@@ -164,7 +163,6 @@ const translations = {
     'contact.title': 'Свяжитесь с нами',
     'contact.subtitle': 'Пишите в любое время — поможем с вашим следующим проектом',
     'contact.channel.telegram': 'Telegram',
-    'contact.channel.telegramAdmin': 'Telegram Админ',
     'contact.channel.whatsapp': 'WhatsApp',
     'contact.name': 'Имя',
     'contact.email': 'Email',
@@ -175,7 +173,7 @@ const translations = {
     'contact.error': 'Не удалось отправить сообщение. Попробуйте ещё раз или напишите нам на почту.',
     'contact.info': 'Контактная информация',
     'contact.cta.title': 'Удобнее в мессенджере?',
-    'contact.cta.desc': 'Нажмите Telegram — обычно отвечаем за несколько минут.',
+    'contact.cta.desc': 'Нажмите Telegram или WhatsApp — обычно отвечаем за несколько минут.',
     'contact.social': 'Мы в соцсетях',
     
     // Footer
